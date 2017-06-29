@@ -2,13 +2,13 @@
 
 cd $1;
 
-find query25.sql | while read line; do
+find query12.sql | while read line; do
     for i in {0..0}
     do
     query=$(basename "$line" ".sql")
     rm -rf /opt/output/$query/$i
     mkdir -p /opt/output/$query/$i
-    
+    echo $query
     (hive --hiveconf hive.execution.engine=tez --hiveconf hive.stats.fetch.column.stats=true \
         --hiveconf hive.session.id="$query.$i" \
         --hiveconf hive.log.explain.output=true \

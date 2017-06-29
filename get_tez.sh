@@ -2,8 +2,8 @@
 
 cd $1;
 
-find query25.sql | while read line; do
-    for i in {0..13}
+find query56.sql | while read line; do
+    for i in {31..31}
     do
     query=$(basename "$line" ".sql")
 
